@@ -1,0 +1,5 @@
+ejercicio 7 gestion de permisos
+creé el usaurio "analista" para que solo pueda hacer select sobre las tablas "productoa" y "ventas"
+si hace una consulta con select, muestra los resultados correspondientes pero con un insert muestra este error:
+ERROR 1142 (42000): INSERT command denied to user 'analista'@'localhost' for table 'productos'
+esto confirma que solo puede hacer select y nada más
