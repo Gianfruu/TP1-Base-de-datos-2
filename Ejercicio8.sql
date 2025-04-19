@@ -1,12 +1,12 @@
 
--- Tabla principalauditoria_clientesauditoria_clientes
+-- Tabla clientes
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
     email VARCHAR(100)
 );
 
--- Tabla de auditoría
+-- Tabla de auditoria
 CREATE TABLE auditoria_clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     accion VARCHAR(10),
@@ -16,7 +16,6 @@ CREATE TABLE auditoria_clientes (
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- TRIGGERS DE AUDITORÍA
 
 -- Trigger para INSERT
 DELIMITER $$
@@ -79,14 +78,16 @@ END$$
 DELIMITER ;
 
 -- Ejemplos de uso para probar el sistema
+
 -- Insertar algunos clientes
 INSERT INTO clientes (nombre, email) VALUES 
 ('Juan Pérez', 'juan@ejemplo.com'),
 ('María López', 'maria@ejemplo.com');
 
--- Actualizar un cliente
+-- Actualizar clientes
 UPDATE clientes SET email = 'juan.perez@ejemplo.com' WHERE id = 1;
 UPDATE clientes SET nombre = 'María Antonieta López' WHERE id = 2;
+
 -- Eliminar un cliente
 DELETE FROM clientes WHERE id = 2;
 
